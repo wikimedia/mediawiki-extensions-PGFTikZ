@@ -29,14 +29,14 @@ if( !defined( 'MEDIAWIKI' ) )
 }
 
 // Extension credits that will show up on Special:Version
-$wgExtensionCredits['validextensionclass'][] = array(
+$wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'PGFTikZ',
 	'version'        => '0.1',
 	'author'         => 'Thibault Marin',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:PGFTikZ',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:PGFTikZ',
 	'descriptionmsg' => 'pgftikz-desc'
-	);
+);
 
 /**
  * Extension class
