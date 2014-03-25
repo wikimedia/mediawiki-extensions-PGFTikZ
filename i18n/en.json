@@ -23,6 +23,8 @@
     "pgftikz-error-epstoolrun": "Error when running epstool (runtime error).",
     "pgftikz-error-convertnoout": "Error when running convert (no output, is convert present?).",
     "pgftikz-error-convertrun": "Error when running convert (runtime).",
+    "pgftikz-error-ghostscriptnoout": "Error when running ghostscript (no output, is gs present?).",
+    "pgftikz-error-ghostscriptrun": "Error when running ghostscript (runtime).",
     "pgftikz-error-uploadlocal_error_empty": "Error during upload (empty file).",
     "pgftikz-error-uploadlocal_error_missing": "Error during upload (filetype missing).",
     "pgftikz-error-uploadlocal_error_badtype": "Error during upload (bad filetype).",

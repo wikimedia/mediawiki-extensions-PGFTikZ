@@ -4,14 +4,37 @@ class PGFTikZParser {
 
 	/**
 	 * Report error to wikipage
+	 *
+	 * @param $rawmsg string Raw error string (escaped)
+	 * @return string HTML block containing error message as displayed in output
 	 */
-	public static function errorMsg( $msg ) {
-		return "<div><pre><tt>" . wfMessage( 'pgftikz-error-title' ) .
-		       "</tt>" . $msg . "</pre></div>";
+	private static function errorMsg( $rawmsg ) {
+		return Html::openElement( 'div' ) .
+		       Html::openElement( 'pre' ) .
+		       Html::openElement( 'tt' ) .
+		       wfMessage( 'pgftikz-error-title' )->escaped() .
+		       Html::closeElement( 'tt' ) .
+		       $rawmsg .
+		       Html::closeElement( 'pre' ) .
+		       Html::closeElement( 'div' );
+	}
+
+	/**
+	 * Report error from message object
+	 *
+	 * @param $msg Message Message object
+	 * @return string HTML block containing error message as displayed in output
+	 */
+	private static function errorMsgObj( $msg ) {
+		return self::errorMsg( $msg->escaped() );
 	}
 
 	/**
 	 * Report error with content of log
+	 *
+	 * @param $msg Message Message object
+	 * @param $log string Raw error detail text (e.g. exception message)
+	 * @return string HTML block containing error message as displayed in output
 	 */
 	private static function errorMsgLog( $msg, $log, $nLines = -1 ) {
 		$log = explode( PHP_EOL, $log );
@@ -20,8 +43,7 @@ class PGFTikZParser {
 			$log = array_slice( $log, $nLinesLog - $nLines + 1, $nLinesLog);
 		}
 		$log = implode ( "<br />", $log );
-		return self::errorMsg( htmlspecialchars( $msg ) . "<br />" .
-		                       htmlspecialchars( $log ) );
+		return self::errorMsg( $msg->escaped() . "<br />" . $log );
 	}
 
 	/**
@@ -76,7 +98,7 @@ class PGFTikZParser {
 				    'title'      => 'File:' . urlencode( $fname_preview ),
 				    'token'      => $token );
 				$api = new ApiMain(
-				    new DerivativeRequest( $wgRequest, $reqParams, false ),
+				    new DerivativeRequest( $wgRequest, $reqParams, true ),
 				    true // enable write?
 				);
 				try {
@@ -103,6 +125,18 @@ class PGFTikZParser {
 		// Local parameters
 		$flagDebug = true;
 		$eol = PHP_EOL; // "\n"
+
+		// Special case for use within template
+		$isContentPage = $parser->getTitle()->isContentPage();
+		if ( $flagDebug ) {
+			wfDebugLog( "", "Is content page: " .
+			            ( $isContentPage ? "yes" : "no" ) . "\n" );
+		}
+		if( !$isContentPage ) {
+			return "<nowiki>" . $input . "</nowiki>";
+		}
+		// true: only expand template parameters; false: expand also magic words
+		$expandedPageText = $parser->replaceVariables( $input, $frame, false );
 
 		// Global variables
 		global $wgRequest;
@@ -135,7 +169,7 @@ class PGFTikZParser {
 		// Create text page for input (saved in file's wikipage)
 		$imgPageText  = "<pre>\n";
 		$imgPageText .= $wgPGFTikZTextMarker . "\n";
-		$imgPageText .= htmlspecialchars( $input ) . "\n";
+		$imgPageText .= htmlspecialchars( $expandedPageText ) . "\n";
 		$imgPageText .= $wgPGFTikZTextMarker . "\n";
 		$imgPageText .= "</pre>\n";
 
@@ -151,7 +185,7 @@ class PGFTikZParser {
 		}
 
 		// Split input line by line
-		$lines = explode( "\n", $input );
+		$lines = explode( "\n", $expandedPageText );
 		// Remove empty lines, reindex to 0:N-1
 		$lines = array_values( array_filter( $lines, 'trim' ) );
 		$nLines = count( $lines );
@@ -168,7 +202,7 @@ class PGFTikZParser {
 			$firstLineIdx++;
 		}
 		if ( $firstLineIdx >= $nLines ) {
-			return self::errorMsg( wfMessage( 'pgftikz-error-emptyinput' ) );
+			return self::errorMsgObj( wfMessage( 'pgftikz-error-emptyinput' ) );
 		}
 
 		// Extract filename from first (non-empty) line
@@ -181,11 +215,11 @@ class PGFTikZParser {
 				$imgFname = $matches[1];
 			} else {
 				// DEBUG
-				return self::errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-imagelineparse' ) );
 			}
 		} else {
-			return self::errorMsg(
+			return self::errorMsgObj(
 			    wfMessage( 'pgftikz-error-imagelineparse' ) );
 		}
 		if ( $flagDebug ) {
@@ -279,7 +313,7 @@ class PGFTikZParser {
 							}
 						}
 						if ( !$foundFirst ) {
-							return self::errorMsg(
+							return self::errorMsgObj(
 							    wfMessage( 'pgftikz-error-nonpgffile' ) );
 						}
 						$foundDiff = false;
@@ -296,7 +330,7 @@ class PGFTikZParser {
 						}
 						$flagNeedUpdate = $foundDiff;
 					} else {
-						return self::errorMsg(
+						return self::errorMsgObj(
 						    wfMessage( 'pgftikz-error-apigetpagecontent' ) );
 					}
 				} else {
@@ -305,7 +339,7 @@ class PGFTikZParser {
 					}
 				}
 			} else {
-				return self::errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-apigetpagecontent' ) );
 			}
 		}
@@ -359,8 +393,8 @@ class PGFTikZParser {
 			$li++;
 		}
 		if ( !$foundPreambleStart || !$foundPreambleEnd ) {
-			return self::errorMsg(
-			    wfMessage ( 'pgftikz-error-preambleparse' ) );
+			return self::errorMsgObj(
+			    wfMessage( 'pgftikz-error-preambleparse' ) );
 		}
 
 		// Extract tex input
@@ -435,41 +469,41 @@ class PGFTikZParser {
 		} else {
 			switch( $verification['status'] ) {
 			case UploadBase::EMPTY_FILE:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_empty' ) );
 				break;
 			case UploadBase::FILETYPE_MISSING:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_missing' ) );
 				break;
 			case UploadBase::FILETYPE_BADTYPE:
 				global $wgFileExtensions;
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_badtype' ) );
 				break;
 			case UploadBase::MIN_LENGTH_PARTNAME:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_tooshort' ) );
 				break;
 			case UploadBase::ILLEGAL_FILENAME:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_illegal' ) );
 				break;
 			case UploadBase::OVERWRITE_EXISTING_FILE:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_overwrite' ) );
 				break;
 			case UploadBase::VERIFICATION_ERROR:
-				return errorMsg(
-				    wfMessage( 'pgftikz-error-uploadlocal_error_verify',
-				               $verification['details'][0] ) );
+				return self::errorMsgLog(
+				    wfMessage( 'pgftikz-error-uploadlocal_error_verify' ),
+				    $verification['details'][0] );
 				break;
 			case UploadBase::HOOK_ABORTED:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_hook' ) );
 				break;
 			default:
-				return errorMsg(
+				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_unknown' ) );
 				break;
 			}
@@ -493,7 +527,7 @@ class PGFTikZParser {
 				'token'      => $token
 				);
 			$api = new ApiMain(
-				new DerivativeRequest( $wgRequest, $reqParams, false ),
+				new DerivativeRequest( $wgRequest, $reqParams, true ),
 				true // enable write?
 				);
 			try {
@@ -509,15 +543,18 @@ class PGFTikZParser {
 			}
 			if ( array_key_exists ( 'edit', $apiResult ) ) {
 				if ( array_key_exists( 'result', $apiResult['edit'] ) ) {
-					if ( !strcasecmp( $apiResult['edit']['result'],
-					                  'Success' ) ) {
-						self::errorMsg( wfMessage( 'pgftikz-error-apiedit' ) );
+					if ( strcasecmp( $apiResult['edit']['result'],
+					                 'Success' ) != 0 ) {
+						return self::errorMsgObj(
+						    wfMessage( 'pgftikz-error-apiedit' ) );
 					}
 				} else {
-					self::errorMsg( wfMessage( 'pgftikz-error-apiedit' ) );
+					return self::errorMsgObj(
+					    wfMessage( 'pgftikz-error-apiedit' ) );
 				}
 			} else {
-				self::errorMsg( wfMessage( 'pgftikz-error-apiedit' ) );
+				return self::errorMsgObj(
+				    wfMessage( 'pgftikz-error-apiedit' ) );
 			}
 		}
 //DEBUG

@@ -36,7 +36,7 @@ class PGFTikZCompiler {
 	}
 
 	/**
-	 * Return latest error message
+	 * Return latest error message (always escaped text)
 	 */
 	public function getError() {
 		return $this->_errorMsg;
@@ -44,6 +44,10 @@ class PGFTikZCompiler {
 
 	/**
 	 * Report error with content of log
+	 *
+	 * @param $msg Message Message object
+	 * @param $log string Raw error detail text (e.g. exception message)
+	 * @return string Raw error message text
 	 */
 	private function errorMsgLog( $msg, $log, $nLines = -1 ) {
 		$log = explode( PHP_EOL, $log );
@@ -51,11 +55,57 @@ class PGFTikZCompiler {
 			$nLinesLog = count( $log );
 			$log = array_slice( $log, $nLinesLog - $nLines + 1, $nLinesLog);
 		}
-		$log = preg_replace( "#" . $this->_foldName . "#", "", $log );
+		// Obfuscate folder name in error message
+		$fold = preg_replace( '/\\\\/', '.', wfTempDir() );
+		$log = preg_replace( "#" . $fold . "#", "", $log );
 		$log = implode ( "<br />", $log );
-		return htmlspecialchars( $msg ) . "<br />" . $log;
+		return $msg->escaped() . "<br />" . $log;
 	}
 
+	/**
+	 * Helper function to run shell command and handle errors
+	 */
+	private function shellCmdHelper( $cmd, $expected_output, $errType ) {
+
+		switch ( strtolower( $errType ) ) {
+		case 'latex':
+			$errNoOutput = wfMessage( 'pgftikz-error-latexnoout' );
+			$errOutput   = wfMessage( 'pgftikz-error-latexcompil' );
+			break;
+		case 'dvips':
+			$errNoOutput = wfMessage( 'pgftikz-error-dvipsnoout' );
+			$errOutput   = wfMessage( 'pgftikz-error-dvipscompil' );
+			break;
+		case 'epstool':
+			$errNoOutput = wfMessage( 'pgftikz-error-epstoolnoout' );
+			$errOutput   = wfMessage( 'pgftikz-error-epstoolrun' );
+			break;
+		case 'convert':
+			$errNoOutput = wfMessage( 'pgftikz-error-convertnoout' );
+			$errOutput   = wfMessage( 'pgftikz-error-convertrun' );
+			break;
+		case 'ghostscript':
+			$errNoOutput = wfMessage( 'pgftikz-error-ghostscriptnoout' );
+			$errOutput   = wfMessage( 'pgftikz-error-ghostscriptrun' );
+			break;
+		}
+
+		$retVal = 0;
+		$stdouterr = wfShellExecWithStderr( $cmd, $retVal );
+		if ( !file_exists( $expected_output ) || $retVal != 0 ) {
+			if ( $stdouterr == '' ) {
+				$this->_errorMsg = $errNoOutput->escaped();
+				return false;
+			}
+			$this->_errorMsg = $this->errorMsgLog( $errOutput, $stdouterr, 10 );
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Compile image from latex code
+	 */
 	public function generateImage( $preambleStr, $latexContent, $imgFname,
 	                               $dpi, $TEXLR ) {
 
@@ -66,6 +116,9 @@ class PGFTikZCompiler {
 		global $wgPGFTikZdvipsPath;
 		global $wgPGFTikZepstoolPath;
 		global $wgImageMagickConvertCommand;
+		global $wgPGFTikZuseghostscript;
+		global $wgPGFTikZghostScriptPath;
+		global $wgPGFTikZLaTeXStandalone;
 
 		// 1 - Check ability to compile LaTeX file
 		// ---------------------------------------
@@ -73,11 +126,12 @@ class PGFTikZCompiler {
 		// generated (might require imagemagick/epstool for tight bounding box).
 // TODO
 		// Commands
-		$LATEX      = $wgPGFTikZLaTeXPath;
-		$LATEX_OPTS = $wgPGFTikZLaTeXOpts;
-		$DVIPS      = $wgPGFTikZdvipsPath;
-		$EPSTOOL    = $wgPGFTikZepstoolPath;
-		$CONVERT    = $wgImageMagickConvertCommand;
+		$LATEX       = $wgPGFTikZLaTeXPath;
+		$LATEX_OPTS  = $wgPGFTikZLaTeXOpts;
+		$DVIPS       = $wgPGFTikZdvipsPath;
+		$EPSTOOL     = $wgPGFTikZepstoolPath;
+		$CONVERT     = $wgImageMagickConvertCommand;
+		$GHOSTSCRIPT = $wgPGFTikZghostScriptPath;
 
 		// 2 - Create .tex file
 		// --------------------
@@ -86,9 +140,16 @@ class PGFTikZCompiler {
 		// Build latex string
 		// (see http://heinjd.wordpress.com/2010/04/28/
 		// creating-eps-figures-using-tikz/)
-		$latexStr  = '\documentclass{article}' . $TEXLR;
-		$latexStr .= '\def\pgfsysdriver{pgfsys-dvips.def}' . $TEXLR;
-		//$latexStr .= '\usepackage{nopageno}' . $TEXLR;
+		if ( !$wgPGFTikZLaTeXStandalone ) {
+			$latexStr = '\documentclass{article}' . $TEXLR;
+			$latexStr .= '\usepackage{nopageno}' . $TEXLR;
+		} else {
+			$latexStr = '\documentclass[varwidth=true, border=10pt]' .
+			            '{standalone}' . $TEXLR;
+		}
+		if ( !$wgPGFTikZuseghostscript ) {
+			$latexStr .= '\def\pgfsysdriver{pgfsys-dvips.def}' . $TEXLR;
+		}
 		$latexStr .= '\usepackage[usenames]{color}' . $TEXLR;
 		$latexStr .= $preambleStr . $TEXLR;
 		$latexStr .= '\begin{document}' . $TEXLR;
@@ -101,8 +162,8 @@ class PGFTikZCompiler {
 		$this->_foldName = $latexTmpDir;
 		if ( !is_dir( $latexTmpDir ) ) {
 			if ( !mkdir( $latexTmpDir, 0700, true ) ) {
-				$this->_errorMsg = errorMsg(
-				    wfMessage ( 'pgftikz-error-tmpdircreate' ) );
+				$this->_errorMsg =
+				    wfMessage ( 'pgftikz-error-tmpdircreate' )->escaped();
 				return false;
 			}
 		}
@@ -110,8 +171,8 @@ class PGFTikZCompiler {
 		$latexFname = $latexBaseFname . ".tex";
 		$latexWriteRet = file_put_contents( $latexFname, $latexStr );
 		if ( !$latexWriteRet ) {
-			$this->_errorMsg = errorMsg(
-			    wfMessage( 'pgftikz-error-texfilecreate' ) );
+			$this->_errorMsg =
+			    wfMessage( 'pgftikz-error-texfilecreate' )->escaped();
 			return false;
 		}
 
@@ -119,104 +180,58 @@ class PGFTikZCompiler {
 		// --------------------------------
 
 		// External calls
-		$cmd_latex = "$LATEX $LATEX_OPTS -output-directory=$latexTmpDir " .
-		    wfEscapeShellArg( $latexFname ) . " &> $latexTmpDir/latex_log.txt";
+		$opt_latex = ( $LATEX_OPTS == '' )? '': wfEscapeShellArg( $LATEX_OPTS );
+		$cmd_latex = wfEscapeShellArg( $LATEX ) . " " . $opt_latex .
+		    " -output-directory=$latexTmpDir " . wfEscapeShellArg( $latexFname );
+		$out_latex = "$latexBaseFname.dvi";
 		//print ("Running latex on tikz code\n(<$cmd_latex>)..." . "\n");
-		wfShellExec( $cmd_latex, $latexRetVal );
-		if ( !file_exists( "$latexBaseFname.dvi" ) || $latexRetVal != 0 ) {
-			if ( file_exists( "$latexTmpDir/latex_log.txt" ) ) {
-				$retLatex = file_get_contents( "$latexTmpDir/latex_log.txt" );
-				if ( empty( $retLatex ) ) {
-					$this->_errorMsg = errorMsg(
-					    wfMessage( 'pgftikz-error-latexnoout' ) );
-					return false;
-				}
-				$this->_errorMsg = $this->errorMsgLog(
-				    wfMessage( 'pgftikz-error-latexcompil' ), $retLatex, 10 );
-				return false;
-			} else {
-				$this->_errorMsg = errorMsg(
-				    wfMessage( 'pgftikz-error-latexnoout' ) );
-				return false;
-			}
+		if ( !$this->shellCmdHelper( $cmd_latex, $out_latex, 'latex' ) ) {
+			// Error message already set in helper function
+			return false;
 		}
 
 		// Generate EPS
-		$cmd_dvips = "$DVIPS -R -K0 -E " .
-		    wfEscapeShellArg( $latexBaseFname ) . ".dvi " .
-		    "-o $latexTmpDir/out.eps &> $latexTmpDir/dvips_log.txt";
+		$eps_dvips = ( $wgPGFTikZuseghostscript )? "": "-E";
+		$cmd_dvips = wfEscapeShellArg( $DVIPS ) . " -R -K0 " . $eps_dvips .
+		    " " . wfEscapeShellArg( $latexBaseFname ) . ".dvi " .
+		    "-o $latexTmpDir/out.ps";
+		$out_dvips = "$latexTmpDir/out.ps";
 		//print ("Running dvips on dvi\n(<$cmd_dvips>)..." . "\n");
-		wfShellExec( $cmd_dvips, $dvipsRetVal );
-		if ( !file_exists( "$latexTmpDir/out.eps" ) || $dvipsRetVal != 0 ) {
-			if ( file_exists( "$latexTmpDir/dvips_log.txt" ) ) {
-				$retDvips = file_get_contents( "$latexTmpDir/dvips_log.txt" );
-				if ( empty( $retDvips ) ) {
-					$this->_errorMsg = errorMsg(
-					    wfMessage( 'pgftikz-error-dvipsnoout' ) );
-					return false;
-				}
-				$this->_errorMsg = $this->errorMsgLog(
-				    wfMessage( 'pgftikz-error-dvipscompil' ), $retDvips, 10 );
+		if ( !$this->shellCmdHelper( $cmd_dvips, $out_dvips, 'dvips' ) ) {
+			return false;
+		}
+
+		if ( !$wgPGFTikZuseghostscript ) {
+			// Fix bounding box
+			$cmd_eps = wfEscapeShellArg( $EPSTOOL ) . " --copy --bbox " .
+			    "$latexTmpDir/out.ps $latexTmpDir/out_bb.eps";
+			$out_eps = "$latexTmpDir/out_bb.eps";
+			//print ("Fixing bounding box\n(<$cmd_eps>)..." . "\n");
+			if ( !$this->shellCmdHelper( $cmd_eps, $out_eps, 'epstool' ) ) {
 				return false;
-			} else {
-				$this->_errorMsg = errorMsg(
-				    wfMessage( 'pgftikz-error-dvipsnoout' ) );
+			}
+			// Convert to desired output
+			$cmd_convert = wfEscapeShellArg( $CONVERT ) . " -density $dpi " .
+			    "$latexTmpDir/out_bb.eps $latexTmpDir/" .
+			    wfEscapeShellArg( $imgFname );
+			$out_convert = "$latexTmpDir/$imgFname";
+			wfDebug("", "PGFconvert: " . $cmd_convert );
+			//print ("Converting file\n(<$cmd_convert>)..." . "\n");
+			if ( !$this->shellCmdHelper( $cmd_convert, $out_convert,
+			                             'convert' ) ) {
+				return false;
+			}
+		} else {
+			$cmd_ghs = wfEscapeShellArg( $GHOSTSCRIPT ) . " -dBATCH -dNOPAUSE" .
+			    " -sDEVICE=pngalpha -r" . $dpi ." -dEPSCrop -sOutputFile=" .
+			    "$latexTmpDir/" . wfEscapeShellArg( $imgFname ) .
+			    " $latexTmpDir/out.ps";
+			$out_ghs = "$latexTmpDir/$imgFname";
+			if ( !$this->shellCmdHelper( $cmd_ghs, $out_ghs, 'ghostscript' ) ) {
 				return false;
 			}
 		}
 
-		// Fix bounding box
-		$cmd_eps = "$EPSTOOL --copy --bbox $latexTmpDir/out.eps " .
-		    "$latexTmpDir/out_bb.eps &> $latexTmpDir/epstool_log.txt";
-		//print ("Fixing bounding box\n(<$cmd_eps>)..." . "\n");
-		wfShellExec( $cmd_eps, $epstoolRetVal );
-		if ( !file_exists( "$latexTmpDir/out_bb.eps" ) ||
-		     $epstoolRetVal != 0 ) {
-			if ( file_exists( "$latexTmpDir/epstool_log.txt" ) ) {
-				$retEpstool = file_get_contents(
-				    "$latexTmpDir/epstool_log.txt" );
-				if ( empty( $retEpstool ) ) {
-					$this->_errorMsg = errorMsg(
-					    wfMessage( 'pgftikz-error-epstoolnoout' ) );
-					return false;
-				}
-				$this->_errorMsg = $this->errorMsgLog(
-				    wfMessage( 'pgftikz-error-epstoolrun' ),
-				    $retEpstool, 10 );
-				return false;
-			} else {
-				$this->_errorMsg = errorMsg(
-					wfMessage( 'pgftikz-error-epstoolnoout' ) );
-				return false;
-			}
-		}
-
-		// Convert to desired output
-		$cmd_convert = "$CONVERT -density $dpi $latexTmpDir/out_bb.eps " .
-		    "$latexTmpDir/" . wfEscapeShellArg( $imgFname ) .
-		    " &> $latexTmpDir/convert_log.txt";
-		//print ("Converting file\n(<$cmd_convert>)..." . "\n");
-		wfShellExec( $cmd_convert, $convertRetVal );
-		if ( !file_exists( "$latexTmpDir/$imgFname" ) ||
-		     $convertRetVal != 0 ) {
-			if ( file_exists( "$latexTmpDir/convert_log.txt" ) ) {
-				$retConvert =
-				    file_get_contents( "$latexTmpDir/convert_log.txt" );
-				if ( empty( $retConvert ) ) {
-					$this->_errorMsg = errorMsg(
-					    wfMessage( 'pgftikz-error-convertnoout' ) );
-					return false;
-				}
-				$this->_errorMsg = $this->errorMsgLog(
-				    wfMessage( 'pgftikz-error-convertrun' ),
-				    $retConvert, 10 );
-				return false;
-			} else {
-				$this->_errorMsg = errorMsg(
-				    wfMessage( 'pgftikz-error-convertnoout' ) );
-				return false;
-			}
-		}
 		return true;
 	}
 

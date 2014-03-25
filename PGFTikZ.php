@@ -8,7 +8,7 @@
  * require_once('$IP/extensions/PGFTikZ.php');
  *
  * @ingroup Extensions
- * @author Thibault Marin
+ * @authors Thibault Marin, Markus Bürkler
  * @version 0.1
  * @link http://www.mediawiki.org/wiki/Extension:PGFTikZ
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
@@ -28,8 +28,8 @@ if( !defined( 'MEDIAWIKI' ) )
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'PGFTikZ',
-	'version'        => '0.2.0',
-	'author'         => 'Thibault Marin',
+	'version'        => '0.3.0',
+	'author'         => array( 'Thibault Marin', 'Markus Bürkler' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:PGFTikZ',
 	'descriptionmsg' => 'pgftikz-desc'
 );
@@ -70,7 +70,15 @@ $wgPGFTikZLaTeXOpts = '-no-shell-escape';
 // Full path to 'dvips' executable
 $wgPGFTikZdvipsPath = 'dvips';
 
+// Either use epstool+imagemagick or ghostscript to generate image
+$wgPGFTikZuseghostscript = true;
+
 // Full path to 'epstool' executable
 $wgPGFTikZepstoolPath = 'epstool';
 
+// Full path to 'ghostscript' executable
+$wgPGFTikZghostScriptPath = 'gs';
+
+// Use standalone LaTeX package
+$wgPGFTikZLaTeXStandalone = true;
 
