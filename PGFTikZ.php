@@ -12,10 +12,6 @@
  * @version 0.1
  * @link http://www.mediawiki.org/wiki/Extension:PGFTikZ
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
- *
- * @revision
- * 0.1
- *  Initial version.
  */
 
 /**
@@ -32,7 +28,7 @@ if( !defined( 'MEDIAWIKI' ) )
 $wgExtensionCredits['parserhook'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'PGFTikZ',
-	'version'        => '0.1',
+	'version'        => '0.2.0',
 	'author'         => 'Thibault Marin',
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:PGFTikZ',
 	'descriptionmsg' => 'pgftikz-desc'
@@ -54,6 +50,7 @@ $wgHooks['ParserAfterTidy'][]     = 'PGFTikZHooks::onPGFTikZAfterTidy';
 /**
  * Internationalization
  */
+$wgMessagesDirs['PGFTikZ'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['PGFTikZ'] = dirname( __FILE__ ) . '/PGFTikZ.i18n.php';
 
 /**

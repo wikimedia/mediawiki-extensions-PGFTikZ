@@ -1,0 +1,17 @@
+{
+    "@metadata": {
+        "authors": [
+            "thibault marin"
+        ]
+    },
+    "pgftikz-desc": "{{desc}}",
+    "pgftikz-error-title": "Generic title message displayed before the actual reported error",
+    "pgftikz-error-emptyinput": "Displayed when parsing input and finding no text between <PGFTikZ> tags.",
+    "pgftikz-error-imagelineparse": "Displayed when extraction of filename from image entry line (e.g. [[Image:filename.png]]) failed.",
+    "pgftikz-error-apigetpagecontent": "Displayed when API call to get existing file failed.",
+    "pgftikz-error-apiedit": "Displayed when API call failed to edit wikipage associated with uploaded image.",
+    "pgftikz-error-apidelete": "Displayed when API call to delete preview wikipage.",
+    "pgftikz-error-nonpgffile": "Displayed when a file with the target name was found, but the PGFTikZ header was not found (possibly a non PGFTikZ-generated file).",
+    "pgftikz-error-preambleparse": "<PGFTikZPreamble> tags not found in input.",
+    "pgftikz-error-tmpdircreate": "Displayed when temporary folder creation failed."
+}
