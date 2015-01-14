@@ -7,7 +7,7 @@
     "pgftikz-desc": "Render PGF/TikZ graphs in wiki",
     "pgftikz-error-title": "PGFTikZ parser error:",
     "pgftikz-error-emptyinput": "Empty input.",
-    "pgftikz-error-imagelineparse": "Could not parse image line, expected something like ([[File:Image file name.ext|file link]]).",
+    "pgftikz-error-imagelineparse": "Could not parse image line, expected something like ([[File:Image filename.ext|file link]]).",
     "pgftikz-error-apigetpagecontent": "Could not get image page content for comparision.",
     "pgftikz-error-apiedit": "Could not update file wikipage.",
     "pgftikz-error-apidelete": "Could not delete preview wikipage.",
