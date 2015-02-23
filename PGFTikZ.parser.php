@@ -51,8 +51,14 @@ class PGFTikZParser {
 			self::errorMsgLog( wfMessage( 'pgftikz-error-apigetpagecontent' ),
 			                   $e->getMessage() );
 		}
-		$apiResult = $api->getResultData();
-		$apiPagePreview = array_values( $apiResult['query']['pages'] );
+		if ( defined( 'ApiResult::META_CONTENT' ) ) {
+			$apiPagePreview = array_values( ApiResult::removeMetadataNonRecursive(
+				(array)$api->getResult()->getResultData( array( 'query', 'pages' ) )
+			) );
+		} else {
+			$apiResult = $api->getResultData();
+			$apiPagePreview = array_values( $apiResult['query']['pages'] );
+		}
 
 		if ( count( $apiPagePreview ) > 0 ) {
 			$previewPageExists = array_key_exists( 'pageid',
@@ -225,8 +231,14 @@ class PGFTikZParser {
 				    wfMessage( 'pgftikz-error-apigetpagecontent' ),
 				    $e->getMessage() );
 			}
-			$apiResult = $api->getResultData();
-			$apiPagesResult = array_values( $apiResult['query']['pages'] );
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				$apiPagesResult = array_values( ApiResult::removeMetadataNonRecursive(
+					(array)$api->getResult()->getResultData( array( 'query', 'pages' ) )
+				) );
+			} else {
+				$apiResult = $api->getResultData();
+				$apiPagesResult = array_values( $apiResult['query']['pages'] );
+			}
 
 			if ( count( $apiPagesResult ) > 0 ) {
 				$flagFoundImage = array_key_exists( 'revisions',
@@ -237,10 +249,18 @@ class PGFTikZParser {
 						wfDebugLog( "", "PGF-File $imgFname already exists, " .
 						            "checking if different\n". "\n");
 					}
-					if ( count( $apiPagesResult[0]['revisions'] ) > 0 ) {
+					$revisions = ApiResult::removeMetadataNonRecursive(
+						$apiPagesResult[0]['revisions']
+					);
+					if ( count( $revisions ) > 0 ) {
 						// File already exists, compare content
-						$imgPageTextRef =
-						    $apiPagesResult[0]['revisions'][0]['*'];
+						if ( defined( 'ApiResult::META_CONTENT' ) &&
+							isset( $revisions[0][ApiResult::META_CONTENT] )
+						) {
+							$imgPageTextRef = $revisions[0][$revisions[0][ApiResult::META_CONTENT]];
+						} else {
+							$imgPageTextRef = $revisions[0]['*'];
+						}
 						$textNewArray = explode( PHP_EOL, $imgPageText );
 						$textRefArray = explode( PHP_EOL, $imgPageTextRef );
 						$nLinesNew = count( $textNewArray );
@@ -482,7 +502,11 @@ class PGFTikZParser {
 				self::errorMsgLog( wfMessage( 'pgftikz-error-apiedit' ),
 				                   $e->getMessage() );
 			}
-			$apiResult = $api->getResultData();
+			if ( defined( 'ApiResult::META_CONTENT' ) ) {
+				$apiResult = $api->getResult()->getResultData();
+			} else {
+				$apiResult = $api->getResultData();
+			}
 			if ( array_key_exists ( 'edit', $apiResult ) ) {
 				if ( array_key_exists( 'result', $apiResult['edit'] ) ) {
 					if ( !strcasecmp( $apiResult['edit']['result'],
