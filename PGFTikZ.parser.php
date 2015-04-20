@@ -52,9 +52,9 @@ class PGFTikZParser {
 			                   $e->getMessage() );
 		}
 		if ( defined( 'ApiResult::META_CONTENT' ) ) {
-			$apiPagePreview = array_values( ApiResult::removeMetadataNonRecursive(
-				(array)$api->getResult()->getResultData( array( 'query', 'pages' ) )
-			) );
+			$apiPagePreview = array_values(
+				(array)$api->getResult()->getResultData( array( 'query', 'pages' ), array( 'Strip' => 'base' ) )
+			);
 		} else {
 			$apiResult = $api->getResultData();
 			$apiPagePreview = array_values( $apiResult['query']['pages'] );
@@ -232,9 +232,9 @@ class PGFTikZParser {
 				    $e->getMessage() );
 			}
 			if ( defined( 'ApiResult::META_CONTENT' ) ) {
-				$apiPagesResult = array_values( ApiResult::removeMetadataNonRecursive(
-					(array)$api->getResult()->getResultData( array( 'query', 'pages' ) )
-				) );
+				$apiPagesResult = array_values(
+					(array)$api->getResult()->getResultData( array( 'query', 'pages' ), array( 'Strip' => 'base' ) )
+				);
 			} else {
 				$apiResult = $api->getResultData();
 				$apiPagesResult = array_values( $apiResult['query']['pages'] );
@@ -249,7 +249,7 @@ class PGFTikZParser {
 						wfDebugLog( "", "PGF-File $imgFname already exists, " .
 						            "checking if different\n". "\n");
 					}
-					$revisions = ApiResult::removeMetadataNonRecursive(
+					$revisions = ApiResult::stripMetadataNonRecursive(
 						$apiPagesResult[0]['revisions']
 					);
 					if ( count( $revisions ) > 0 ) {
