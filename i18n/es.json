@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"pgftikz-error-emptyinput": "Entrada vacía.",
+	"pgftikz-error-tmpdircreate": "Error al crear la carpeta temporal."
+}

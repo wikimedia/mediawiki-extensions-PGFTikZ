@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"pgftikz-error-title": "Błąd parsera PGFTikZ:",
+	"pgftikz-error-tmpdircreate": "Błąd tworzenia katalogu tymczasowego.",
+	"pgftikz-error-texfilecreate": "Błąd tworzenia pliku źródłowego LaTeX.",
+	"pgftikz-error-uploadlocal_error_empty": "Błąd podczas przesyłania (pusty plik).",
+	"pgftikz-error-uploadlocal_error_missing": "Błąd podczas przesyłania (brakujący typ pliku).",
+	"pgftikz-error-uploadlocal_error_badtype": "Błąd podczas przesyłania (niedozwolony typ pliku).",
+	"pgftikz-error-uploadlocal_error_tooshort": "Błąd podczas przesyłania (nazwa pliku zbyt krótka).",
+	"pgftikz-error-uploadlocal_error_illegal": "Błąd podczas przesyłania (niedozwolona nazwa pliku).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Błąd podczas przesyłania (nadpisywanie).",
+	"pgftikz-error-uploadlocal_error_verify": "Błąd podczas przesyłania (błąd weryfikacji).",
+	"pgftikz-error-uploadlocal_error_unknown": "Błąd podczas przesyłania (nieznany błąd)."
+}
