@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"thibault marin"
+			"thibault marin",
+			"Purodha"
 		]
 	},
 	"pgftikz-desc": "{{desc}}",
@@ -17,14 +18,14 @@
 	"pgftikz-error-texfilecreate": "Error displayed when creation of LaTeX source file failed.",
 	"pgftikz-error-latexnoout": "Error displayed when call to LaTeX failed and produced no text output.",
 	"pgftikz-error-latexcompil": "Error displayed when call to LaTeX failed to compile (compilation log follows).",
-	"pgftikz-error-dvipsnoout": "Error displayed when call to dvips failed and produced no text output.",
-	"pgftikz-error-dvipscompil": "Error displayed when call to dvips failed to produce image (error message follows).",
-	"pgftikz-error-epstoolnoout": "Error displayed when call to epstool failed and produced no text output.",
-	"pgftikz-error-epstoolrun": "Error displayed when call to epstool failed to produce image (error message follows).",
-	"pgftikz-error-convertnoout": "Error displayed when call to convert (imagemagick) failed and produced no text output.",
-	"pgftikz-error-convertrun": "Error displayed when call to convert (imagemagick) failed to produce image (error message follows).",
-	"pgftikz-error-ghostscriptnoout": "Error displayed when call to ghostscript failed and produced no text output.",
-	"pgftikz-error-ghostscriptrun": "Error displayed when call to ghostscript failed to produce image (error message follows).",
+	"pgftikz-error-dvipsnoout": "Error displayed when a call to dvips failed and produced no text output.",
+	"pgftikz-error-dvipscompil": "Error displayed when a call to dvips failed to produce image (error message follows).",
+	"pgftikz-error-epstoolnoout": "Error displayed when a call to epstool failed and produced no text output.",
+	"pgftikz-error-epstoolrun": "Error displayed when a call to epstool failed to produce image (error message follows).",
+	"pgftikz-error-convertnoout": "Error displayed when a call to convert (imagemagick) failed and produced no text output.",
+	"pgftikz-error-convertrun": "Error displayed when a call to convert (imagemagick) failed to produce an image (error message follows).",
+	"pgftikz-error-ghostscriptnoout": "Error displayed when a call to ghostscript failed and produced no text output.",
+	"pgftikz-error-ghostscriptrun": "Error displayed when a call to ghostscript failed to produce an image (error message follows).",
 	"pgftikz-error-uploadlocal_error_empty": "Error displayed when upload failed (empty file).",
 	"pgftikz-error-uploadlocal_error_missing": "Error displayed when upload failed (filetype missing).",
 	"pgftikz-error-uploadlocal_error_badtype": "Error displayed when upload failed (bad filetype).",

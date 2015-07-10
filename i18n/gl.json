@@ -14,6 +14,7 @@
 	"pgftikz-error-nonpgffile": "O ficheiro existente non está xenerado por PGF/TikZ, non se sobreescribe.",
 	"pgftikz-error-preambleparse": "Erro analizando o preámbulo LaTeX.",
 	"pgftikz-error-tmpdircreate": "Erro ó crear a carpeta temporal.",
+	"pgftikz-error-texfilecreate": "Erro creando ficheiro fonte LaTeX.",
 	"pgftikz-error-latexnoout": "Erro ó executar LaTeX (non hai saída, está instalado LaTeX?).",
 	"pgftikz-error-latexcompil": "Erro ó executar LaTeX (erro de compilación).",
 	"pgftikz-error-dvipsnoout": "Erro ó executar dvips (non hai saída, está instalado dvips?).",
