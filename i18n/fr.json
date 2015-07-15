@@ -1,8 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Windes"
+			"Windes",
+			"Wladek92"
 		]
 	},
-	"pgftikz-error-emptyinput": "Entrée vide."
+	"pgftikz-error-emptyinput": "Entrée vide.",
+	"pgftikz-error-apiedit": "Impossible de mettre a jour la page wiki du fichier.",
+	"pgftikz-error-apidelete": "Impossible de supprimer la page wiki de prévisualisation.",
+	"pgftikz-error-texfilecreate": "Erreur pendant la création du fichier source LaTex.",
+	"pgftikz-error-latexcompil": "Erreur dans LaTeX (erreur de compilation).",
+	"pgftikz-error-dvipscompil": "Erreur dans dvips (runtime error).",
+	"pgftikz-error-convertrun": "Erreur durant la conversion (runtime).",
+	"pgftikz-error-ghostscriptrun": "Erreur dans ghostscript (runtime)."
 }
