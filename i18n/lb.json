@@ -6,5 +6,6 @@
 	},
 	"pgftikz-error-apiedit": "De Fichier Wikisäit konnt net aktualiséiert ginn.",
 	"pgftikz-error-uploadlocal_error_empty": "Feeler beim Eroplueden (eidele Fichier).",
+	"pgftikz-error-uploadlocal_error_tooshort": "Feeler beim Eroplueden (Numm vum Fichier ze kuerz)",
 	"pgftikz-error-uploadlocal_error_unknown": "Feeler beim Eroplueden (onbekannte Feeler)."
 }
