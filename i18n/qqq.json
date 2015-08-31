@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"thibault marin",
-			"Purodha"
+			"Purodha",
+			"Nemo bis"
 		]
 	},
 	"pgftikz-desc": "{{desc}}",
@@ -25,7 +26,7 @@
 	"pgftikz-error-convertnoout": "Error displayed when a call to convert (imagemagick) failed and produced no text output.",
 	"pgftikz-error-convertrun": "Error displayed when a call to convert (imagemagick) failed to produce an image (error message follows).",
 	"pgftikz-error-ghostscriptnoout": "Error displayed when a call to ghostscript failed and produced no text output.",
-	"pgftikz-error-ghostscriptrun": "Error displayed when a call to ghostscript failed to produce an image (error message follows).",
+	"pgftikz-error-ghostscriptrun": "Error displayed when a call to ghostscript failed to produce an image (error message follows).\n\nThe parenthesis \"runtime\" is the technical term for \"when running ghostscript\": you can drop it if there is no such term in your language.",
 	"pgftikz-error-uploadlocal_error_empty": "Error displayed when upload failed (empty file).",
 	"pgftikz-error-uploadlocal_error_missing": "Error displayed when upload failed (filetype missing).",
 	"pgftikz-error-uploadlocal_error_badtype": "Error displayed when upload failed (bad filetype).",
