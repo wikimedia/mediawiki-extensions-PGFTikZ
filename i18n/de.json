@@ -30,8 +30,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Fehler beim Hochladen (ungültiger Dateityp).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Fehler beim Hochladen (der Dateiname ist zu kurz).",
 	"pgftikz-error-uploadlocal_error_illegal": "Fehler beim Hochladen (ungültiger Dateiname).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Fehler beim Hochladen (überschreiben).",
-	"pgftikz-error-uploadlocal_error_verify": "Fehler beim Hochladen (Verifizierungsfehler).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Fehler beim Hochladen (das Überschreiben einer vorhandenen Datei ist nicht erlaubt).",
+	"pgftikz-error-uploadlocal_error_verify": "Fehler beim Hochladen (Verifizierungsfehler): $1",
 	"pgftikz-error-uploadlocal_error_hook": "Fehler beim Hochladen (Hook fehlgeschlagen).",
 	"pgftikz-error-uploadlocal_error_unknown": "Fehler beim Hochladen (unbekannter Fehler)."
 }
