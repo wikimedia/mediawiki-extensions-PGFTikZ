@@ -23,7 +23,7 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Błąd podczas przesyłania (niedozwolony typ pliku).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Błąd podczas przesyłania (nazwa pliku zbyt krótka).",
 	"pgftikz-error-uploadlocal_error_illegal": "Błąd podczas przesyłania (niedozwolona nazwa pliku).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Błąd podczas przesyłania (nadpisywanie).",
-	"pgftikz-error-uploadlocal_error_verify": "Błąd podczas przesyłania (błąd weryfikacji).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Błąd podczas przesyłania (nie można nadpisywać istniejącego pliku).",
+	"pgftikz-error-uploadlocal_error_verify": "Błąd podczas przesyłania (błąd weryfikacji): $1",
 	"pgftikz-error-uploadlocal_error_unknown": "Błąd podczas przesyłania (nieznany błąd)."
 }
