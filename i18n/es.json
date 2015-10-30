@@ -5,5 +5,7 @@
 		]
 	},
 	"pgftikz-error-emptyinput": "Entrada vacía.",
-	"pgftikz-error-tmpdircreate": "Error al crear la carpeta temporal."
+	"pgftikz-error-tmpdircreate": "Error al crear la carpeta temporal.",
+	"pgftikz-error-uploadlocal_error_overwrite": "Error durante la subida (no está permitido sobrescribir un archivo existente).",
+	"pgftikz-error-uploadlocal_error_verify": "Error durante la subida (error de verificación): $1"
 }
