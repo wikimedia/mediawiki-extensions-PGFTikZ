@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"pgftikz-desc": "Reproducir gráficos PGF/TikZ na wiki",
@@ -30,8 +31,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Erro durante a carga (tipo de ficheiro incorrecto).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Erro durante a carga (nome de ficheiro demasiado curto).",
 	"pgftikz-error-uploadlocal_error_illegal": "Erro durante a carga (nome de ficheiro non permitido).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Error durante a carga (sobreescritura).",
-	"pgftikz-error-uploadlocal_error_verify": "Erro durante a carga (erro de verificación).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Error durante a carga (non se permite sobreescribir un ficheiro xa existente).",
+	"pgftikz-error-uploadlocal_error_verify": "Erro durante a carga (erro de verificación): $1",
 	"pgftikz-error-uploadlocal_error_hook": "Erro durante a carga (ligazón abortada).",
 	"pgftikz-error-uploadlocal_error_unknown": "Erro durante a carga (erro descoñecido)."
 }
