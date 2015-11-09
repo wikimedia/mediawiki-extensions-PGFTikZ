@@ -30,8 +30,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Помилка під час завантаження (неправильний тип файлу).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Помилка під час завантаження (назва файлу закоротка).",
 	"pgftikz-error-uploadlocal_error_illegal": "Помилка під час завантаження (заборонена назва файлу).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Помилка під час завантаження (перепис).",
-	"pgftikz-error-uploadlocal_error_verify": "Помилка під час завантаження (помилка верифікації).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Помилка під час завантаження (перезапис наявного файлу не дозволено).",
+	"pgftikz-error-uploadlocal_error_verify": "Помилка під час завантаження (помилка верифікації): $1",
 	"pgftikz-error-uploadlocal_error_hook": "Помилка під час завантаження (гук перервано).",
 	"pgftikz-error-uploadlocal_error_unknown": "Помилка під час завантаження (невідома помилка)."
 }
