@@ -5,5 +5,5 @@
 		]
 	},
 	"pgftikz-error-uploadlocal_error_overwrite": "فائيل چاڙهڻ ۾ چُڪَ (موجوده فائيل جي جاءِ تي ٻيو فائيل رکڻ جي اجازت ڪانهي).",
-	"pgftikz-error-uploadlocal_error_verify": "فائيل چاڙهڻ ۾ چُڪَ"
+	"pgftikz-error-uploadlocal_error_verify": "فائيل چاڙهڻ ۾ چُڪَ (تصديق ۾ چُڪَ): $1"
 }
