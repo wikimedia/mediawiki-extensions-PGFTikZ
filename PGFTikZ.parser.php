@@ -154,7 +154,7 @@ class PGFTikZParser {
 		// pristine/39/39caa7e912faa5b2e8ae5d3418086bc95a7a7e91.svn-base
 		if ( $parser === $wgParser ) {
 			// Needed since r82645. Workaround the 'Invalid marker' problem by
-			// giving a new parser to wfMsgExt().
+			// giving a new parser to wfMessage().
 			$wgParser = new StubObject( 'wgParser', $wgParserConf['class'],
 			                             array( $wgParserConf ) );
 		}
@@ -520,7 +520,7 @@ class PGFTikZParser {
 				'action'     => 'edit',
 				'title'      => 'File:' . urlencode( $imgFname),
 				'text'       => $imgPageText,
-				'summary'    => wfMsgForContent( 'update from PGFTikZ' ),
+				'summary'    => wfMessage( 'update from PGFTikZ' )->inContentLanguage()->text(),
 				'notminor'   => true,
 				'recreate'   => true,
 				'bot'        => true,
