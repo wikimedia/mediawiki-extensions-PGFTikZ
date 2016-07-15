@@ -30,8 +30,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Грешка при подигањето (неисправен податотечен тип).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Грешка при подигањето (прекратко податотечно име).",
 	"pgftikz-error-uploadlocal_error_illegal": "Грешка при подигањето (недозволено податотечно име).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Грешка при подигањето (презапишување).",
-	"pgftikz-error-uploadlocal_error_verify": "Грешка при подигањето (грешка во заверката).",
-	"pgftikz-error-uploadlocal_error_hook": "Грешка при подигањето (куката е прекината).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Грешка при подигањето (не е дозволено презапишувањето врз постоечка податотека).",
+	"pgftikz-error-uploadlocal_error_verify": "Грешка при подигањето (грешка во заверката): $1",
+	"pgftikz-error-uploadlocal_error_hook": "Грешка при подигањето (пресретникот е отповикан).",
 	"pgftikz-error-uploadlocal_error_unknown": "Грешка при подигањето (непозната грешка)."
 }
