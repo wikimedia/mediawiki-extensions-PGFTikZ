@@ -3,7 +3,8 @@
 		"authors": [
 			"Windes",
 			"Wladek92",
-			"Gomoko"
+			"Gomoko",
+			"Urhixidur"
 		]
 	},
 	"pgftikz-desc": "Générer les graphiques PGF/TikZ dans wiki",
@@ -32,8 +33,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Erreur pendant le téléversement (mauvais type de fichier).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Erreur durant le téléversement (nom de fichier trop court).",
 	"pgftikz-error-uploadlocal_error_illegal": "Erreur pendant le téléversement (nom de fichier illégal).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Erreur pendant le téléchargement (écraser un fichier existant n’est pas autorisé).",
-	"pgftikz-error-uploadlocal_error_verify": "Erreur pendant le téléchargement (erreur de vérification) : $1",
+	"pgftikz-error-uploadlocal_error_overwrite": "Erreur pendant le téléversement (écraser un fichier existant n’est pas autorisé).",
+	"pgftikz-error-uploadlocal_error_verify": "Erreur pendant le téléversement (erreur de vérification) : $1",
 	"pgftikz-error-uploadlocal_error_hook": "Erreur lors du téléversement (référence abortée).",
 	"pgftikz-error-uploadlocal_error_unknown": "Erreur durant le téléversement (erreur inconnue)."
 }
