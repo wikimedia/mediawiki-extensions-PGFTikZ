@@ -51,7 +51,6 @@ $wgHooks['ParserAfterTidy'][]     = 'PGFTikZHooks::onPGFTikZAfterTidy';
  * Internationalization
  */
 $wgMessagesDirs['PGFTikZ'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['PGFTikZ'] = dirname( __FILE__ ) . '/PGFTikZ.i18n.php';
 
 /**
  * Parameters (modify in LocalSettings.php)
