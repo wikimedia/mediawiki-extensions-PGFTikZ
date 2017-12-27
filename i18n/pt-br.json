@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"pgftikz-desc": "Compor gráficos PGF/TikZ na wiki",
+	"pgftikz-error-title": "Erro do analisador PGFTikZ:"
+}
