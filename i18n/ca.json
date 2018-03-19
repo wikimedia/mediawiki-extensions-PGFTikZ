@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"F3RaN"
+			"F3RaN",
+			"Fitoschido"
 		]
 	},
 	"pgftikz-error-title": "PGFTikZ analitzador d'error:",
@@ -19,8 +20,8 @@
 	"pgftikz-error-uploadlocal_error_missing": "Error durant la càrrega (tipus de fitxer absent).",
 	"pgftikz-error-uploadlocal_error_badtype": "Error durant la càrrega (mal de tipus de fitxer).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Error durant la càrrega (nom del fitxer massa curt).",
-	"pgftikz-error-uploadlocal_error_illegal": "Error durant la càrrega (nom de fitxer il·legal).",
+	"pgftikz-error-uploadlocal_error_illegal": "Error durant la càrrega (nom de fitxer no permès).",
 	"pgftikz-error-uploadlocal_error_verify": "Error durant la càrrega (verificació de l'error).",
-	"pgftikz-error-uploadlocal_error_hook": "Error durant la càrrega (ganxo avortat).",
+	"pgftikz-error-uploadlocal_error_hook": "Error durant la càrrega (lligam interromput).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error durant la càrrega (error desconegut)."
 }
