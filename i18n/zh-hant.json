@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Cwlin0416"
+			"Cwlin0416",
+			"Kly"
 		]
 	},
 	"pgftikz-desc": "於 Wiki 產生 PGF/TikZ 圖型",
@@ -30,8 +31,8 @@
 	"pgftikz-error-uploadlocal_error_badtype": "上傳時發生錯誤 (filetype 錯誤)。",
 	"pgftikz-error-uploadlocal_error_tooshort": "上傳時發生錯誤 (filename 過短)。",
 	"pgftikz-error-uploadlocal_error_illegal": "上傳時發生錯誤 (不合法的檔案名稱)。",
-	"pgftikz-error-uploadlocal_error_overwrite": "上傳時發生錯誤 (覆寫)。",
-	"pgftikz-error-uploadlocal_error_verify": "上傳時發生錯誤 (檢驗錯誤)。",
+	"pgftikz-error-uploadlocal_error_overwrite": "上傳時發生錯誤（不允許覆寫現有的檔案）。",
+	"pgftikz-error-uploadlocal_error_verify": "上傳時發生錯誤（驗證錯誤）：$1",
 	"pgftikz-error-uploadlocal_error_hook": "上傳時發生錯誤 (Hook 中止)。",
 	"pgftikz-error-uploadlocal_error_unknown": "上傳時發生錯誤 (不明錯誤)。"
 }
