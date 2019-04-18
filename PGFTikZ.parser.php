@@ -577,7 +577,7 @@ class PGFTikZParser {
 		// 6 - Insert <img ...> code in page
 		// ---------------------------------
 		// Use recursiveTagParse()
-		// (http://www.mediawiki.org/wiki/Manual:
+		// (https://www.mediawiki.org/wiki/Manual:
 		// Tag_extensions#Since_version_1.16)
 //DEBUG
 		if ($flagDebug) {

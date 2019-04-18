@@ -10,7 +10,7 @@
  * @ingroup Extensions
  * @authors Thibault Marin, Markus Bürkler
  * @version 0.1
- * @link http://www.mediawiki.org/wiki/Extension:PGFTikZ
+ * @link https://www.mediawiki.org/wiki/Extension:PGFTikZ
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
  */
 
