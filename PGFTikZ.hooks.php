@@ -20,9 +20,11 @@ class PGFTikZHooks {
 		// find markers in $text
 		// replace markers with actual output
 		global $markerList;
-		for ( $i = 0; $i < count( $markerList ); $i++ ) {
-			$text = preg_replace( '/xx-marker' . $i . '-xx/',
-			                      $markerList[$i], $text );
+		if ( is_array( $markerList ) ) {
+			for ( $i = 0; $i < count( $markerList ); $i++ ) {
+				$text = preg_replace( '/xx-marker' . $i . '-xx/',
+				                      $markerList[$i], $text );
+			}
 		}
 		return true;
 	}
