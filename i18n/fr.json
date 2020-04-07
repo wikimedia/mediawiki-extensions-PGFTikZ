@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Windes",
-			"Wladek92",
 			"Gomoko",
-			"Urhixidur"
+			"Urhixidur",
+			"Windes",
+			"Wladek92"
 		]
 	},
 	"pgftikz-desc": "Générer les graphiques PGF/TikZ dans wiki",
