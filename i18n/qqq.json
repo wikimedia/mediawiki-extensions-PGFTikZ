@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"MuratTheTurkish",
 			"Nemo bis",
 			"Purodha",
 			"thibault marin"
@@ -9,7 +10,7 @@
 	"pgftikz-desc": "{{desc}}",
 	"pgftikz-error-title": "Generic title message displayed before the actual reported error",
 	"pgftikz-error-emptyinput": "Displayed when parsing input and finding no text between <PGFTikZ> tags.",
-	"pgftikz-error-imagelineparse": "Displayed when extraction of filename from image entry line (e.g. [[Image:filename.png]]) failed.",
+	"pgftikz-error-imagelineparse": "Displayed when extraction of filename from image entry line (e.g. [[:File:Filename.png]]) failed.",
 	"pgftikz-error-apigetpagecontent": "Displayed when API call to get existing file failed.",
 	"pgftikz-error-apiedit": "Displayed when API call failed to edit wikipage associated with uploaded image.",
 	"pgftikz-error-apidelete": "Displayed when API call to delete preview wikipage.",
