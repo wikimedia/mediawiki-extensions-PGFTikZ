@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jerrykim306"
+			"Jerrykim306",
+			"Ykhwong"
 		]
 	},
+	"pgftikz-error-emptyinput": "빈 입력.",
 	"pgftikz-error-uploadlocal_error_empty": "업로드 도중 오류가 발생함 (빈 파일).",
 	"pgftikz-error-uploadlocal_error_missing": "업로드 도중 오류가 발생함 (파일 종류가 누락됨).",
 	"pgftikz-error-uploadlocal_error_badtype": "업로드 도중 오류가 발생함 (잘못된 파일 종류).",
