@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Reproducir gráficos PGF/TikZ na wiki",
 	"pgftikz-error-title": "Error d'analís de PGFTikZ:",
 	"pgftikz-error-emptyinput": "Entrada vacia.",
-	"pgftikz-error-imagelineparse": "Nun pudo analizase la llinia d'imaxe, esperábase algo como ([[File:Image filename.ext|file link]]).",
+	"pgftikz-error-imagelineparse": "Nun pudo analizase la llinia d'imaxe, esperábase algo como <code><nowiki>[[File:Image filename.ext|link to file]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Nun pudo algamase'l conteníu de la páxina d'imaxe pa comparancia.",
 	"pgftikz-error-apiedit": "Nun pudo anovase la páxina wiki del ficheru.",
 	"pgftikz-error-apidelete": "Nun pudo desaniciase la páxina wiki de vista previa.",

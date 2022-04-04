@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Испис на графика во PGF/TikZ на вики",
 	"pgftikz-error-title": "Грешка во расчленувањето на PGFTikZ:",
 	"pgftikz-error-emptyinput": "Празен внос.",
-	"pgftikz-error-imagelineparse": "Не можев да го расчленам редот со слика. Очекуав нешто од типот ([[File:Image filename.ext|врска за податотеката]]).",
+	"pgftikz-error-imagelineparse": "Не можев да го расчленам редот со слика. Очекував нешто од типот ([[File:Image filename.ext|врска до податотеката]]).",
 	"pgftikz-error-apigetpagecontent": "Не можев да ја преземам содржината на сликата за споредба.",
 	"pgftikz-error-apiedit": "Не можев да ја изменам викистраница на податотеката.",
 	"pgftikz-error-apidelete": "Не можев да ја избришам прегледната викистраница.",

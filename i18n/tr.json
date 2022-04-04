@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Wikide PGF/TikZ grafikleri oluştur",
 	"pgftikz-error-title": "PGFTikZ ayrıştırıcı hatası:",
 	"pgftikz-error-emptyinput": "Boş giriş.",
-	"pgftikz-error-imagelineparse": "Resim satırı ayrıştırılamadı, böyle bir şey bekleniyordu ([[File:Image filename.ext|dosya bağlantısı]]).",
+	"pgftikz-error-imagelineparse": "Resim satırı ayrıştırılamadı, böyle bir şey bekleniyordu <code><nowiki>[[File:Image filename.ext|dosya bağlantısı]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Karşılaştırma için resim sayfası içeriği alınamadı.",
 	"pgftikz-error-apiedit": "Dosya vikisayfa güncellenemedi.",
 	"pgftikz-error-apidelete": "Önizleme vikisayfa silinemedi.",

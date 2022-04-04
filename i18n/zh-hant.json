@@ -8,7 +8,7 @@
 	"pgftikz-desc": "於 Wiki 產生 PGF/TikZ 圖型",
 	"pgftikz-error-title": "PGF/TikZ 解析器錯誤：",
 	"pgftikz-error-emptyinput": "空的輸入。",
-	"pgftikz-error-imagelineparse": "無法解析圖片行，預期為類似 ([[File:Image filename.ext|檔案連結]]) 的東西。",
+	"pgftikz-error-imagelineparse": "無法解析圖片行，預期為類似<code><nowiki>[[File:Image filename.ext|檔案連結]]</nowiki></code>的東西。",
 	"pgftikz-error-apigetpagecontent": "無法取得圖片頁面內容用來比對。",
 	"pgftikz-error-apiedit": "無法上傳檔案 wiki 頁面。",
 	"pgftikz-error-apidelete": "無法刪除預覽 wiki 頁面。",
