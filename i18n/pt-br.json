@@ -8,7 +8,7 @@
 	"pgftikz-desc": "Compor gráficos PGF/TikZ na wiki",
 	"pgftikz-error-title": "Erro do analisador PGFTikZ:",
 	"pgftikz-error-emptyinput": "Entrada vazia.",
-	"pgftikz-error-imagelineparse": "Não foi possível analisar a linha da imagem, esperava algo como ([[File:Image filename.ext|hiperligação para um arquivo]]).",
+	"pgftikz-error-imagelineparse": "Não foi possível analisar a linha da imagem, esperava algo como <code><nowiki>[[File:Image filename.ext|hiperligação para um arquivo]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Não foi possível obter o conteúdo da página da imagem, para comparação.",
 	"pgftikz-error-apiedit": "Não foi possível atualizar a página do arquivo na wiki.",
 	"pgftikz-error-apidelete": "Não foi possível eliminar a página de pré-visualização.",

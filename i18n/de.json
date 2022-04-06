@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Rendert PGF/TikZ-Grafiken im Wiki",
 	"pgftikz-error-title": "PGFTikZ-Parserfehler:",
 	"pgftikz-error-emptyinput": "Leere Eingabe.",
-	"pgftikz-error-imagelineparse": "Bildzeile konnte nicht geparst werden, es wird etwas erwartet wie ([[File:Image filename.ext|Dateilink]]).",
+	"pgftikz-error-imagelineparse": "Bildzeile konnte nicht geparst werden, es wird etwas erwartet wie <code><nowiki>[[File:Image filename.ext|Dateilink]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Der Bildseiteninhalt konnte nicht zum Vergleich abgerufen werden.",
 	"pgftikz-error-apiedit": "Die Datei-Wikiseite konnte nicht aktualisiert werden.",
 	"pgftikz-error-apidelete": "Die Vorschau-Wikiseite konnte nicht gelöscht werden.",

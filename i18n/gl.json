@@ -8,7 +8,7 @@
 	"pgftikz-desc": "Reproducir gráficos PGF/TikZ na wiki",
 	"pgftikz-error-title": "Erro de análise PGFTikZ:",
 	"pgftikz-error-emptyinput": "Entrada baleira.",
-	"pgftikz-error-imagelineparse": "Non se pode analizar a liña da imaxe, esperábase algo como ([[File:Image filename.ext|file link]]).",
+	"pgftikz-error-imagelineparse": "Non se pode analizar a liña da imaxe, esperábase algo como <code><nowiki>[[:File:Image filename.ext|file link]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Non se pode obter contido de páxina de imaxe para comparar.",
 	"pgftikz-error-apiedit": "Non se pode actualizar o ficheiro da páxina wiki.",
 	"pgftikz-error-apidelete": "Non se pode borrar a previsualización da páxina wiki.",
