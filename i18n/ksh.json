@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Donn Dijajramme med <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"A tandem of languages for producing vector graphics from a geometric/algebraic description. PGF is a lower-level language, while TikZ is a set of higher-level macros that use PGF\">PGF/TikZ</i> em Wikki aanzeije.",
 	"pgftikz-error-title": "ne Fähle es em <i lang=\"en\" xml:lang=\"en\" dir=\"ltr\" title=\"A tandem of languages for producing vector graphics from a geometric/algebraic description. PGF is a lower-level language, while TikZ is a set of higher-level macros that use PGF\">PGF/TikZ</i> opjefalle.",
 	"pgftikz-error-emptyinput": "Nix enjejovve",
-	"pgftikz-error-imagelineparse": "Mer kunnte en dä Reih dä Nahme för dat Beld nit fenge. Mer han med esu ja, wi „<code lang=\"en\" xml:lang=\"en\" dir=\"ltr\">[[File:Image filename.ext|file link]]</code>“ jerääschnet.",
+	"pgftikz-error-imagelineparse": "Mer kunnte en dä Reih dä Nahme för dat Beld nit fenge. Mer han med esu ja, wi <code><nowiki>[[File:Image filename.ext|file link]]</nowiki></code> jerääschnet.",
 	"pgftikz-error-apigetpagecontent": "Mer kunnte di Bellder_Sigg nit zum Verjliische holle.",
 	"pgftikz-error-apiedit": "Mer kunnte di Sigg em Wikki nit ändere.",
 	"pgftikz-error-apidelete": "Mer kunnte di Sigg met der Vör_Aanseesch nit us em Wikki fott krijje.",

@@ -7,7 +7,7 @@
 	"pgftikz-desc": "在wiki中渲染PGF/TikZ图表",
 	"pgftikz-error-title": "PGFTikZ解析器错误：",
 	"pgftikz-error-emptyinput": "空的输入。",
-	"pgftikz-error-imagelineparse": "不能解析图片行，除了类似（[[File:Image filename.ext|file link]]）以外。",
+	"pgftikz-error-imagelineparse": "不能解析图片行，除了类似<code><nowiki>[[:File:Image filename.ext|file link]]</nowiki></code>以外。",
 	"pgftikz-error-apigetpagecontent": "不能获取图片页面内容以进行比较。",
 	"pgftikz-error-apiedit": "不能更新文件wiki页面。",
 	"pgftikz-error-apidelete": "不能上传预览wiki页面。",
