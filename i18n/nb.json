@@ -7,7 +7,7 @@
 	"pgftikz-desc": "Vis PGF/TikZ-grafer på wikien",
 	"pgftikz-error-title": "Tolkingsfeil for PGFTikZ:",
 	"pgftikz-error-emptyinput": "Tom inndata.",
-	"pgftikz-error-imagelineparse": "Kunne ikke tolke bilde inline, forventet noe à la ([[File:Image filename.ext|fillenke]]).",
+	"pgftikz-error-imagelineparse": "Kunne ikke tolke bilde inline, forventet noe à la <code><nowiki>[[File:Image filename.ext|fillenke]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Kunne ikke hente bildeinnhold for sammenligning.",
 	"pgftikz-error-apiedit": "Kunne ikke oppdatere filas wikiside.",
 	"pgftikz-error-apidelete": "Kunne ikke slette forhåndsvist wikiside.",

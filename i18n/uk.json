@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Ата",
-			"DDPAT"
+			"DDPAT",
+			"Ice bulldog"
 		]
 	},
 	"pgftikz-desc": "Генерує графіки PGF/TikZ у вікі",
 	"pgftikz-error-title": "PGFTikZ помилка синтаксичного аналізатора:",
 	"pgftikz-error-emptyinput": "Вхід порожній.",
-	"pgftikz-error-imagelineparse": "Не вдалося проаналізувати лінію зображення, очікується щось на зразок ([[File:Image filename.ext|посилання на файл]]).",
+	"pgftikz-error-imagelineparse": "Не вдалося проаналізувати лінію зображення, очікується щось на зразок <code><nowiki>[[File:Image filename.ext|посилання на файл]]</nowiki></code>.",
 	"pgftikz-error-apigetpagecontent": "Не вдалося отримати вміст сторінки зображення для порівняння.",
 	"pgftikz-error-apiedit": "Не вдалося оновити вікісторінку файлу.",
 	"pgftikz-error-apidelete": "Не вдалося вилучити вікісторінку попереднього перегляду.",
