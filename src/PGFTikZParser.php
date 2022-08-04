@@ -52,7 +52,7 @@ class PGFTikZParser {
 	private static function deletePreviewPage ( $fname, $previewSuffix,
 	                                            $token = null ) {
 
-		global $wgRequest, $wgUser;
+		$context = RequestContext::getMain();
 
 		// Get filename for preview
 		$fname_preview = preg_replace( "/\.(\w+)$/", $previewSuffix . ".$1",
@@ -60,7 +60,7 @@ class PGFTikZParser {
 
 		// Check page existence (using API)
 		$params = new DerivativeRequest(
-		    $wgRequest,
+		    $context->getRequest(),
 		    array(
 		        'action' => 'query',
 		        'titles' => 'File:' . urlencode( $fname_preview ),
@@ -90,7 +90,7 @@ class PGFTikZParser {
 
 				if ( $token === null ) {
 					// Get edit token if not provided
-					$token = $wgUser->getEditToken();
+					$token = $context->getUser()->getEditToken();
 				}
 
 				$reqParams = array(
@@ -98,7 +98,7 @@ class PGFTikZParser {
 				    'title'      => 'File:' . urlencode( $fname_preview ),
 				    'token'      => $token );
 				$api = new ApiMain(
-				    new DerivativeRequest( $wgRequest, $reqParams, true ),
+				    new DerivativeRequest( $context->getRequest(), $reqParams, true ),
 				    true // enable write?
 				);
 				try {
@@ -139,12 +139,11 @@ class PGFTikZParser {
 		$expandedPageText = $parser->replaceVariables( $input, $frame, false );
 
 		// Global variables
-		global $wgRequest;
 		global $wgServer;
 		global $wgScriptPath;
-		global $wgUser;
 		global $wgParser;
 		global $wgParserConf;
+		$context = RequestContext::getMain();
 
 		// Global parameters
 		global $wgPGFTikZDefaultDPI;
@@ -250,7 +249,7 @@ class PGFTikZParser {
 		$flagNeedUpdate = false;
 		if ( !$flagForceUpdate ) {
 			$params = new DerivativeRequest(
-				$wgRequest,
+				$context->getRequest(),
 				array(
 					'action' => 'query',
 					'titles' => 'File:' . urlencode( $imgFname ),
@@ -425,7 +424,7 @@ class PGFTikZParser {
 		$filename = $compiler->getFolder() . "/" . $imgFname;
 
 		// Get edit token
-		$token = $wgUser->getEditToken();
+		$token = $context->getUser()->getEditToken();
 
 		// Request parameters
 		$comment = 'Automatically uploaded by PGFTikZ extension';
@@ -444,7 +443,7 @@ class PGFTikZParser {
 		}
 
 		$upload = new UploadFromFile();
-		$upload->initializeFromRequest( $wgRequest );
+		$upload->initializeFromRequest( $context->getRequest() );
 		$upload->initializePathInfo( $imgFname, $filename,
 		                             filesize( $filename ) );
 
@@ -465,7 +464,7 @@ class PGFTikZParser {
 			wfDebugLog( '', 'PGF-verification' . $var );
 		}
 		if ( $verification['status'] === UploadBase::OK ) {
-			$upload->performUpload( $comment, $imgPageText, false, $wgUser );
+			$upload->performUpload( $comment, $imgPageText, false, $context->getUser() );
 		} else {
 			switch( $verification['status'] ) {
 			case UploadBase::EMPTY_FILE:
@@ -527,7 +526,7 @@ class PGFTikZParser {
 				'token'      => $token
 				);
 			$api = new ApiMain(
-				new DerivativeRequest( $wgRequest, $reqParams, true ),
+				new DerivativeRequest( $context->getRequest(), $reqParams, true ),
 				true // enable write?
 				);
 			try {
