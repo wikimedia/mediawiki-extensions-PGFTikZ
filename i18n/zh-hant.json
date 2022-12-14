@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cwlin0416",
-			"Kly"
+			"Kly",
+			"捍粵者"
 		]
 	},
 	"pgftikz-desc": "於 Wiki 產生 PGF/TikZ 圖型",
@@ -19,13 +20,13 @@
 	"pgftikz-error-latexnoout": "執行 LaTeX 時發生錯誤 (沒有輸出，latex 是否存在？)。",
 	"pgftikz-error-latexcompil": "執行 LaTeX 時發生錯誤 (編輯錯誤)。",
 	"pgftikz-error-dvipsnoout": "執行 dvips 時發生錯誤 (沒有輸出，dvips 是否存在？)。",
-	"pgftikz-error-dvipscompil": "執行 dvips 時發生錯誤 (執行期錯誤)。",
+	"pgftikz-error-dvipscompil": "執行dvips時出錯（執行期錯誤）。",
 	"pgftikz-error-epstoolnoout": "執行 epstool 時發生錯誤 (沒有輸出，epstool 是否存在？)。",
 	"pgftikz-error-epstoolrun": "執行 epstool 時發生錯誤 (執行期錯誤)。",
 	"pgftikz-error-convertnoout": "執行 convert 時發生錯誤 (沒有輸出，convert 是否存在？)。",
-	"pgftikz-error-convertrun": "執行 convert 時發生錯誤 (執行期)。",
+	"pgftikz-error-convertrun": "convert執行時出錯（執行期）。",
 	"pgftikz-error-ghostscriptnoout": "執行 ghostscript 時發生錯誤 (沒有輸出，gs 是否存在？)。",
-	"pgftikz-error-ghostscriptrun": "執行 ghostscript 時發生錯誤 (執行期)。",
+	"pgftikz-error-ghostscriptrun": "ghostscript執行時出錯（執行期）。",
 	"pgftikz-error-uploadlocal_error_empty": "上傳時發生錯誤 (空檔案)。",
 	"pgftikz-error-uploadlocal_error_missing": "上傳時發生錯誤 (遺失 filetype)。",
 	"pgftikz-error-uploadlocal_error_badtype": "上傳時發生錯誤 (filetype 錯誤)。",
