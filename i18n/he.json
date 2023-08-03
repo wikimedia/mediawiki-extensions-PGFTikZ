@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"pgftikz-desc": "תיצוג תרשימי PGF/TikZ בוויקי",
+	"pgftikz-error-title": "שגיאה במפענח PGFTikZ:",
+	"pgftikz-error-emptyinput": "קלט ריק.",
+	"pgftikz-error-imagelineparse": "לא היה אפשר לפענח קו בתמונה, זה היה אמור להיות משהו כמו ([[File:Image filename.ext|file link]]).",
+	"pgftikz-error-apiedit": "לא היה אפשר לעדכן את דף הוויקי של הקובץ."
+}
