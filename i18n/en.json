@@ -8,7 +8,7 @@
 	"pgftikz-error-title": "PGFTikZ parser error:",
 	"pgftikz-error-emptyinput": "Empty input.",
 	"pgftikz-error-imagelineparse": "Could not parse image line, expected something like ([[File:Image filename.ext|file link]]).",
-	"pgftikz-error-apigetpagecontent": "Could not get image page content for comparision.",
+	"pgftikz-error-apigetpagecontent": "Could not get image page content for comparison.",
 	"pgftikz-error-apiedit": "Could not update file wikipage.",
 	"pgftikz-error-apidelete": "Could not delete preview wikipage.",
 	"pgftikz-error-nonpgffile": "Existing file is not PGF/TikZ-generated, not overwriting.",
