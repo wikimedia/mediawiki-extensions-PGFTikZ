@@ -1,0 +1,37 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"pgftikz-desc": "PGF/TikZ-grafieken weer op de wiki weergeven",
+	"pgftikz-error-title": "PGFTikZ-parserfout:",
+	"pgftikz-error-emptyinput": "Lege invoer.",
+	"pgftikz-error-imagelineparse": "Kon de afbeeldingsregel niet verwerken. Verwacht werd zoiets als ([[File:Image filename.ext|koppeling naar bestand]]).",
+	"pgftikz-error-apigetpagecontent": "Kan de inhoud van de afbeeldingspagina niet ophalen ter vergelijking.",
+	"pgftikz-error-apiedit": "Kon de bestandswikipagina niet bijwerken.",
+	"pgftikz-error-apidelete": "Kan de voorbeeldwikipagina niet verwijderen.",
+	"pgftikz-error-nonpgffile": "Het bestaande bestand is niet door PGF/TikZ gegenereerd en wordt niet overschreven.",
+	"pgftikz-error-preambleparse": "Fout bij het verwerken van de LaTeX-preambule.",
+	"pgftikz-error-tmpdircreate": "Fout bij het maken van een tijdelijke map.",
+	"pgftikz-error-texfilecreate": "Fout bij aanmaken van LaTeX-bronbestand.",
+	"pgftikz-error-latexnoout": "Fout bij het uitvoeren van LaTeX (geen uitvoer, is latex aanwezig?).",
+	"pgftikz-error-latexcompil": "Fout bij het uitvoeren van LaTeX (compilatiefout).",
+	"pgftikz-error-dvipsnoout": "Fout bij het uitvoeren van dvips (geen uitvoer, is dvips aanwezig?).",
+	"pgftikz-error-dvipscompil": "Fout bij het uitvoeren van dvips (runtimefout).",
+	"pgftikz-error-epstoolnoout": "Fout bij het uitvoeren van LaTeX (geen uitvoer, is latex aanwezig?).",
+	"pgftikz-error-epstoolrun": "Fout bij het uitvoeren van epstool (runtimefout).",
+	"pgftikz-error-convertnoout": "Fout bij het uitvoeren van convert (geen uitvoer, is convert aanwezig?).",
+	"pgftikz-error-convertrun": "Fout bij het uitvoeren van convert (runtime).",
+	"pgftikz-error-ghostscriptnoout": "Fout bij het uitvoeren van ghostscript (geen uitvoer, is gs aanwezig?).",
+	"pgftikz-error-ghostscriptrun": "Fout bij het uitvoeren van ghostscript (runtime).",
+	"pgftikz-error-uploadlocal_error_empty": "Fout tijdens het uploaden (leeg bestand).",
+	"pgftikz-error-uploadlocal_error_missing": "Fout tijdens het uploaden (bestandstype ontbreekt).",
+	"pgftikz-error-uploadlocal_error_badtype": "Fout tijdens het uploaden (verkeerd bestandstype).",
+	"pgftikz-error-uploadlocal_error_tooshort": "Fout tijdens het uploaden (bestandsnaam te kort).",
+	"pgftikz-error-uploadlocal_error_illegal": "Fout tijdens het uploaden (ongeldige bestandsnaam).",
+	"pgftikz-error-uploadlocal_error_overwrite": "Fout tijdens het uploaden (het overschrijven van een bestaand bestand is niet toegestaan).",
+	"pgftikz-error-uploadlocal_error_verify": "Fout tijdens het uploaden (verificatiefout): $1",
+	"pgftikz-error-uploadlocal_error_hook": "Fout tijdens het uploaden (hook afgebroken).",
+	"pgftikz-error-uploadlocal_error_unknown": "Fout tijdens het uploaden (onbekende fout)."
+}
