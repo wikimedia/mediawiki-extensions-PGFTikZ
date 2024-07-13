@@ -141,22 +141,11 @@ class PGFTikZParser {
 		// Global variables
 		global $wgServer;
 		global $wgScriptPath;
-		global $wgParser;
-		global $wgParserConf;
 		$context = RequestContext::getMain();
 
 		// Global parameters
 		global $wgPGFTikZDefaultDPI;
 
-		// Found this to avoid 'Invalid marker' problem
-		// http://www.cityofsteamwiki.com/extensions/ArticleComments/.svn/
-		// pristine/39/39caa7e912faa5b2e8ae5d3418086bc95a7a7e91.svn-base
-		if ( $parser === $wgParser ) {
-			// Needed since r82645. Workaround the 'Invalid marker' problem by
-			// giving a new parser to wfMessage().
-			$wgParser = new StubObject( 'wgParser', $wgParserConf['class'],
-			                             array( $wgParserConf ) );
-		}
 
 		// Detect preview mode (use another filename for upload if it is the
 		// case).  This is to avoid edit conflicts when saving the page.
@@ -188,7 +177,7 @@ class PGFTikZParser {
 		// Remove empty lines, reindex to 0:N-1
 		$lines = array_values( array_filter( $lines, 'trim' ) );
 		$nLines = count( $lines );
-		if ( count( $nLines ) == 0 ) {
+		if ( $nLines == 0 ) {
 			return self::errorMsg ( wfMessage( 'pgftikz-error-emptyinput' ) );
 		}
 
