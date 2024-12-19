@@ -1,13 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
+			"Meno25",
 			"ديفيد"
 		]
 	},
 	"pgftikz-desc": "تقديم رسومات PGF/TikZ في الويكي",
 	"pgftikz-error-title": "خطأ محلل PGFTikZ:",
 	"pgftikz-error-emptyinput": "إدخال فارغ.",
-	"pgftikz-error-imagelineparse": "لا يمكن تحليل خط الصورة، شيء متوقع مثل <!--\n--><bdi><!--\n--><code><!--\n--><nowiki>[[File:Image filename.ext|وصلة ملف]]</nowiki><!--\n--></code><!--\n--></bdi>.",
+	"pgftikz-error-imagelineparse": "لم أتمكن من تحليل سطر الصورة، كنت أتوقع شيئًا مثل ([[File:Image filename.ext|رابط الملف]]).",
 	"pgftikz-error-apigetpagecontent": "لا يمكن الحصول على محتوى صفحة الصورة للمقارنة.",
 	"pgftikz-error-apiedit": "لا يمكن تحديث ملف صفحة الويكي.",
 	"pgftikz-error-apidelete": "لا يمكن حذف معاينة صفحة الويكي.",
