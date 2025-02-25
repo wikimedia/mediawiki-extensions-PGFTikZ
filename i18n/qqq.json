@@ -34,7 +34,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Error displayed when upload failed (bad filetype).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Error displayed when upload failed (filename too short).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error displayed when upload failed (illegal filename).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Error displayed when upload failed (trying to overwrite an existing file when disabled by setup).",
 	"pgftikz-error-uploadlocal_error_verify": "Error displayed when upload failed (verification error).  $1 gives details on the error.",
 	"pgftikz-error-uploadlocal_error_hook": "Error displayed when upload failed (hook aborted).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error displayed when upload failed (unknown error)."

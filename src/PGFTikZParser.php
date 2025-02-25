@@ -477,10 +477,6 @@ class PGFTikZParser {
 				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_illegal' ) );
 				break;
-			case UploadBase::OVERWRITE_EXISTING_FILE:
-				return self::errorMsgObj(
-				    wfMessage( 'pgftikz-error-uploadlocal_error_overwrite' ) );
-				break;
 			case UploadBase::VERIFICATION_ERROR:
 				return self::errorMsgLog(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_verify' ),

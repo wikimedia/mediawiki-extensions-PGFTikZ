@@ -30,7 +30,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Error during upload (bad filetype).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Error during upload (filename too short).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error during upload (illegal filename).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Error during upload (overwriting an existing file is not allowed).",
 	"pgftikz-error-uploadlocal_error_verify": "Error during upload (verification error): $1",
 	"pgftikz-error-uploadlocal_error_hook": "Error during upload (hook aborted).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error during upload (unknown error)."
