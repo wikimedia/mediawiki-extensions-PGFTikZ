@@ -34,7 +34,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Erreur lors du téléversement (mauvais type de fichier).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Erreur lors du téléversement (nom de fichier trop court).",
 	"pgftikz-error-uploadlocal_error_illegal": "Erreur lors du téléversement (nom de fichier illégal).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Erreur lors du téléversement (écraser un fichier existant n’est pas autorisé).",
 	"pgftikz-error-uploadlocal_error_verify": "Erreur lors du téléversement (erreur de vérification) : $1",
 	"pgftikz-error-uploadlocal_error_hook": "Erreur lors du téléversement (crochet avorté).",
 	"pgftikz-error-uploadlocal_error_unknown": "Erreur lors du téléversement (erreur inconnue)."

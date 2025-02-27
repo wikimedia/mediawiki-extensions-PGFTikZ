@@ -32,7 +32,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "上传时出错（错误的文件类型）。",
 	"pgftikz-error-uploadlocal_error_tooshort": "上传时出错（文件名太短）。",
 	"pgftikz-error-uploadlocal_error_illegal": "上传时出错（非法文件名）。",
-	"pgftikz-error-uploadlocal_error_overwrite": "上传时出错（不允许覆盖现有文件）。",
 	"pgftikz-error-uploadlocal_error_verify": "上传时出错（验证错误）：$1",
 	"pgftikz-error-uploadlocal_error_hook": "上传时出错（钩子中止）。",
 	"pgftikz-error-uploadlocal_error_unknown": "上传时出错（未知错误）。"

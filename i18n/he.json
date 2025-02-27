@@ -30,7 +30,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "שגיאה במהלך ההעלאה (סוג קובץ שגוי).",
 	"pgftikz-error-uploadlocal_error_tooshort": "שגיאה במהלך ההעלאה (שם הקובץ קצר מדי).",
 	"pgftikz-error-uploadlocal_error_illegal": "שגיאה במהלך ההעלאה (שם קובץ לא תקין).",
-	"pgftikz-error-uploadlocal_error_overwrite": "שגיאה במהלך ההעלאה (דריסת קובץ קיים אינה מותרת).",
 	"pgftikz-error-uploadlocal_error_verify": "שגיאה במהלך ההעלאה (שגיאת אימות): $1",
 	"pgftikz-error-uploadlocal_error_hook": "שגיאה במהלך ההעלאה (hook הופסק).",
 	"pgftikz-error-uploadlocal_error_unknown": "שגיאה במהלך העלאה (שגיאה לא ידועה)."

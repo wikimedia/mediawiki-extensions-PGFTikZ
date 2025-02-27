@@ -15,7 +15,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Klaida įkeliant (netinkamas failo tipas).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Klaida įkeliant (failo pavadinimas per trumpas).",
 	"pgftikz-error-uploadlocal_error_illegal": "Klaida įkeliant (negalimas failo pavadinimas).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Klaida įkeliant (negalima pakeisti egzistuojančio failo).",
 	"pgftikz-error-uploadlocal_error_verify": "Klaida įkeliant (patvirtinimo klaida): $1",
 	"pgftikz-error-uploadlocal_error_unknown": "Klaida įkeliant (nežinoma klaida)"
 }

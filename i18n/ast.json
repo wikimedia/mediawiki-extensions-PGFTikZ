@@ -30,7 +30,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Error durante la carga (tipu de ficheru incorreutu).",
 	"pgftikz-error-uploadlocal_error_tooshort": "Error durante la carga (nome de ficheru curtiu enforma).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error durante la carga (nome de ficheru illegal).",
-	"pgftikz-error-uploadlocal_error_overwrite": "Error mientres la xubida (nun se permite sobreescribir un ficheru esistente).",
 	"pgftikz-error-uploadlocal_error_verify": "Error mientres la xubida (error de comprobación): $1",
 	"pgftikz-error-uploadlocal_error_hook": "Error durante la carga (enganche albortáu).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error durante la carga (error desconocíu)."

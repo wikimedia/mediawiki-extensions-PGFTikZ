@@ -31,7 +31,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "حدث خطأ أثناء الرفع (نوع الملف سيئ).",
 	"pgftikz-error-uploadlocal_error_tooshort": "حدث خطأ أثناء الرفع (اسم الملف قصير جدا).",
 	"pgftikz-error-uploadlocal_error_illegal": "حدث خطأ أثناء الرفع (اسم ملف غير قانوني).",
-	"pgftikz-error-uploadlocal_error_overwrite": "حدث خطأ أثناء الرفع (لا يُسمَح باستبدال ملف موجود).",
 	"pgftikz-error-uploadlocal_error_verify": "حدث خطأ أثناء الرفع (خطأ في التحقق): $1",
 	"pgftikz-error-uploadlocal_error_hook": "حدث خطأ أثناء الرفع (تم إحباط الخطاف).",
 	"pgftikz-error-uploadlocal_error_unknown": "خطأ أثناء الرفع (خطأ غير معروف)."

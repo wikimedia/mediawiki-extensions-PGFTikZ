@@ -30,7 +30,6 @@
 	"pgftikz-error-uploadlocal_error_badtype": "Ene Fähler es beim Huhlahde opjetrodde. De Zoot Dattei es aanjejovve ävver nit ze bruche.",
 	"pgftikz-error-uploadlocal_error_tooshort": "Ene Fähler es beim Huhlahde opjetrodde. Der Nahme för di Dattei es ze koot.",
 	"pgftikz-error-uploadlocal_error_illegal": "Ene Fähler es beim Huhlahde opjetrodde. Der Nahme för di Dattei es kappott.",
-	"pgftikz-error-uploadlocal_error_overwrite": "Ene Fähler es beim Huhlahde opjetrodde. Di Dattei johv et alld un darref nit ußjetuusch wähde.",
 	"pgftikz-error-uploadlocal_error_verify": "Ene Fähler es beim opjetrodde. De Övverprohvong vun dä huhjelahde Dahte jing scheif: $1",
 	"pgftikz-error-uploadlocal_error_hook": "Ene Fähler es beim Huhlahde opjetrodde. Dat Projramm derför hät sesch sällver afjebroche.",
 	"pgftikz-error-uploadlocal_error_unknown": "Ene onbikannte Fähler es beim Huhlahde opjetrodde."

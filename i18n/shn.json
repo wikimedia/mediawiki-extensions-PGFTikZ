@@ -23,7 +23,6 @@
 	"pgftikz-error-uploadlocal_error_missing": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈ (filetype missing) ၼၼ်ႉ ၽိတ်း",
 	"pgftikz-error-uploadlocal_error_badtype": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈ (bad filetype) ၽိတ်း",
 	"pgftikz-error-uploadlocal_error_illegal": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈ (illegal filename) ၼၼ်ႉ ၽိတ်း",
-	"pgftikz-error-uploadlocal_error_overwrite": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈ ၽိတ်း (overwrite).",
 	"pgftikz-error-uploadlocal_error_verify": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈၼၼ်ႉ ၽိတ်း(verification error).",
 	"pgftikz-error-uploadlocal_error_hook": "မိူဝ်ႈလူတ်ႇၶိုၼ်ႈၼၼ်ႉ ၽိတ်းဝႆႉ (hook aborted)."
 }
