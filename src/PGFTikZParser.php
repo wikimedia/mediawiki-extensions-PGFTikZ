@@ -482,10 +482,6 @@ class PGFTikZParser {
 				    wfMessage( 'pgftikz-error-uploadlocal_error_verify' ),
 				    $verification['details'][0] );
 				break;
-			case UploadBase::HOOK_ABORTED:
-				return self::errorMsgObj(
-				    wfMessage( 'pgftikz-error-uploadlocal_error_hook' ) );
-				break;
 			default:
 				return self::errorMsgObj(
 				    wfMessage( 'pgftikz-error-uploadlocal_error_unknown' ) );
