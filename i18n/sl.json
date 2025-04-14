@@ -31,6 +31,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Napaka pri nalaganju (prekratko ime datoteke).",
 	"pgftikz-error-uploadlocal_error_illegal": "Napaka pri nalaganju (neveljavno ime datoteke).",
 	"pgftikz-error-uploadlocal_error_verify": "Napaka pri nalaganju (napaka preverjanja): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Napaka pri nalaganju (vstavek prekinjen).",
 	"pgftikz-error-uploadlocal_error_unknown": "Napaka pri nalaganju (neznana napaka)."
 }

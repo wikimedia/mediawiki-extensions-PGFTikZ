@@ -31,6 +31,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Yükleme sırasında hata (dosya adı çok kısa).",
 	"pgftikz-error-uploadlocal_error_illegal": "Yükleme sırasında hata (geçersiz dosya adı).",
 	"pgftikz-error-uploadlocal_error_verify": "Yükleme sırasında hata (doğrulama hatası): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Yükleme sırasında hata (kanca iptal edildi).",
 	"pgftikz-error-uploadlocal_error_unknown": "Yükleme sırasında hata (bilinmeyen hata)."
 }

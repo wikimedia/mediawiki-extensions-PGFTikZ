@@ -9,6 +9,5 @@
 	"pgftikz-error-uploadlocal_error_empty": "ھەڵە لە کاتی بارکردندا (پەڕگەی خاڵی).",
 	"pgftikz-error-uploadlocal_error_missing": "ھەڵە لە کاتی بارکردندا (جۆری پەڕگە نەوتراوە)",
 	"pgftikz-error-uploadlocal_error_illegal": "ھەڵە لە کاتی بارکردندا(ناوی پەڕگەی نایاسایی)",
-	"pgftikz-error-uploadlocal_error_verify": "ھەڵە لە کاتی بارکردندا (ھەڵەی سەلماندن)",
-	"pgftikz-error-uploadlocal_error_hook": "ھەڵە لە بارکردندا"
+	"pgftikz-error-uploadlocal_error_verify": "ھەڵە لە کاتی بارکردندا (ھەڵەی سەلماندن)"
 }

@@ -33,6 +33,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "上傳時發生錯誤 (filename 過短)。",
 	"pgftikz-error-uploadlocal_error_illegal": "上傳時發生錯誤 (不合法的檔案名稱)。",
 	"pgftikz-error-uploadlocal_error_verify": "上傳時發生錯誤（驗證錯誤）：$1",
-	"pgftikz-error-uploadlocal_error_hook": "上傳時發生錯誤 (Hook 中止)。",
 	"pgftikz-error-uploadlocal_error_unknown": "上傳時發生錯誤 (不明錯誤)。"
 }

@@ -31,6 +31,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Error durante le incargamento (nomine de file troppo curte).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error durante le incargamento (nomine de file non permittite).",
 	"pgftikz-error-uploadlocal_error_verify": "Error durante le incargamento (error de verification): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Error durante le incargamento (''hook'' abortate).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error durante le incargamento (error incognite)."
 }

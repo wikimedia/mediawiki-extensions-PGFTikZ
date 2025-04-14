@@ -25,6 +25,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Error durante la carga (el nombre de archivo es demasiado corto).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error durante la carga (nombre de archivo no permitido).",
 	"pgftikz-error-uploadlocal_error_verify": "Error durante la subida (error de verificación): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Error durante la carga (enlace interrumpido).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error durante la carga (error desconocido)."
 }

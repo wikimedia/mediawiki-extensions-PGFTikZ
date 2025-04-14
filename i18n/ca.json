@@ -23,6 +23,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Error durant la càrrega (nom del fitxer massa curt).",
 	"pgftikz-error-uploadlocal_error_illegal": "Error durant la càrrega (nom de fitxer no permès).",
 	"pgftikz-error-uploadlocal_error_verify": "Error durant la càrrega (verificació de l'error): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Error durant la càrrega (lligam interromput).",
 	"pgftikz-error-uploadlocal_error_unknown": "Error durant la càrrega (error desconegut)."
 }

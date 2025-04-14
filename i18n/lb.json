@@ -14,6 +14,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Feeler beim Eroplueden (Numm vum Fichier ze kuerz)",
 	"pgftikz-error-uploadlocal_error_illegal": "Feeler beim Eroplueden (illegalen Numm vum Fichier).",
 	"pgftikz-error-uploadlocal_error_verify": "Feeler beim Eroplueden (Iwwerpréiwungsfeeler): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Feeler beim Eroplueden (hook ofgebrach).",
 	"pgftikz-error-uploadlocal_error_unknown": "Feeler beim Eroplueden (onbekannte Feeler)."
 }

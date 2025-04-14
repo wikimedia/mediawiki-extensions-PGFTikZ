@@ -31,6 +31,5 @@
 	"pgftikz-error-uploadlocal_error_tooshort": "Fout tijdens het uploaden (bestandsnaam te kort).",
 	"pgftikz-error-uploadlocal_error_illegal": "Fout tijdens het uploaden (ongeldige bestandsnaam).",
 	"pgftikz-error-uploadlocal_error_verify": "Fout tijdens het uploaden (verificatiefout): $1",
-	"pgftikz-error-uploadlocal_error_hook": "Fout tijdens het uploaden (hook afgebroken).",
 	"pgftikz-error-uploadlocal_error_unknown": "Fout tijdens het uploaden (onbekende fout)."
 }
