@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Volvox"
 		]
 	},
 	"pgftikz-error-title": "PGFTikZ-Parserfeeler:",
+	"pgftikz-error-emptyinput": "Eidelen Input.",
 	"pgftikz-error-apiedit": "De Fichier Wikisäit konnt net aktualiséiert ginn.",
 	"pgftikz-error-texfilecreate": "Feeler beim Uleeë vum LaTeX Quellfichier.",
 	"pgftikz-error-uploadlocal_error_empty": "Feeler beim Eroplueden (eidele Fichier).",
