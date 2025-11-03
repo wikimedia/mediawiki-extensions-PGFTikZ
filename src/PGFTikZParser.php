@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\Html\Html;
+use MediaWiki\Request\DerivativeRequest;
+
 class PGFTikZParser {
 
 	/**
