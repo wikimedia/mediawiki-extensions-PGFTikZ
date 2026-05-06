@@ -2,14 +2,26 @@
 	"@metadata": {
 		"authors": [
 			"Jerrykim306",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"pgftikz-error-emptyinput": "빈 입력.",
+	"pgftikz-error-latexnoout": "LaTeX 실행 중 오류 발생 (출력 없음, latex가 존재합니까?).",
+	"pgftikz-error-latexcompil": "LaTeX 실행 중 오류 발생 (컴파일 오류).",
+	"pgftikz-error-dvipsnoout": "dvips 실행 중 오류 발생 (출력 없음, dvips가 존재합니까?).",
+	"pgftikz-error-dvipscompil": "dvips 실행 중 오류 발생 (런타임 오류).",
+	"pgftikz-error-epstoolnoout": "epstool 실행 중 오류 발생 (출력 없음, epstool가 존재합니까?).",
+	"pgftikz-error-epstoolrun": "epstool 실행 중 오류 발생 (런타임 오류).",
+	"pgftikz-error-convertnoout": "convert 실행 중 오류 발생 (출력 없음, convert가 존재합니까?).",
+	"pgftikz-error-convertrun": "convert 실행 중 오류 발생 (런타임).",
+	"pgftikz-error-ghostscriptnoout": "ghostscript 실행 중 오류 발생 (출력 없음, gs가 존재합니까?).",
+	"pgftikz-error-ghostscriptrun": "ghostscript 실행 중 오류 발생 (런타임).",
 	"pgftikz-error-uploadlocal_error_empty": "업로드 도중 오류가 발생함 (빈 파일).",
 	"pgftikz-error-uploadlocal_error_missing": "업로드 도중 오류가 발생함 (파일 종류가 누락됨).",
 	"pgftikz-error-uploadlocal_error_badtype": "업로드 도중 오류가 발생함 (잘못된 파일 종류).",
 	"pgftikz-error-uploadlocal_error_tooshort": "업로드 도중 오류가 발생함 (너무 짧은 파일 이름).",
 	"pgftikz-error-uploadlocal_error_illegal": "업로드 도중 오류가 발생함 (잘못된 파일 이름).",
+	"pgftikz-error-uploadlocal_error_verify": "업로드 중 오류 발생 (검증 오류): $1",
 	"pgftikz-error-uploadlocal_error_unknown": "업로드 도중에 오류가 발생함 (알 수 없는 오류)."
 }
