@@ -6,7 +6,9 @@
 			"Ykhwong"
 		]
 	},
+	"pgftikz-error-title": "PGFTikZ 파서 오류:",
 	"pgftikz-error-emptyinput": "빈 입력.",
+	"pgftikz-error-tmpdircreate": "임시 폴더를 작성하는 데 오류가 발생했습니다.",
 	"pgftikz-error-latexnoout": "LaTeX 실행 중 오류 발생 (출력 없음, latex가 존재합니까?).",
 	"pgftikz-error-latexcompil": "LaTeX 실행 중 오류 발생 (컴파일 오류).",
 	"pgftikz-error-dvipsnoout": "dvips 실행 중 오류 발생 (출력 없음, dvips가 존재합니까?).",
