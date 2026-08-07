@@ -444,7 +444,7 @@ class PGFTikZParser {
 			wfDebugLog( '', 'PGF-title empty' );
 			return;
 		}
-		$warnings = $upload->checkWarnings();
+		$warnings = $upload->checkWarnings( $context->getAuthority() );
 		if ( $flagDebug ) {
 			$var = var_export( $warnings, true );
 			wfDebugLog( '', 'PGF-warnings' . $var );
